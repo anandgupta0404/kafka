@@ -46,5 +46,5 @@ spec:
     resources: {}
     storage:
       deleteClaim: false
-      size: 10Gi
+      size: 2Gi
       type: persistent-claim
