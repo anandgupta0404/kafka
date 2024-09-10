@@ -35,6 +35,7 @@ spec:
       deleteClaim: false
       size: 2Gi
       type: ephemeral
+      class: fast
   zookeeper:
     livenessProbe:
       initialDelaySeconds: 15
@@ -46,5 +47,6 @@ spec:
     resources: {}
     storage:
       deleteClaim: false
+      class: fast
       size: 2Gi
       type: ephemeral
