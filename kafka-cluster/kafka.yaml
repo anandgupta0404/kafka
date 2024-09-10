@@ -34,7 +34,7 @@ spec:
     storage:
       deleteClaim: false
       size: 2Gi
-      type: persistent-claim
+      type: ephemeral
   zookeeper:
     livenessProbe:
       initialDelaySeconds: 15
@@ -47,4 +47,4 @@ spec:
     storage:
       deleteClaim: false
       size: 2Gi
-      type: persistent-claim
+      type: ephemeral
