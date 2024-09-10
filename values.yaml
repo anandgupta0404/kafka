@@ -25,7 +25,7 @@ logConfiguration: ""
 logLevel: ${env:STRIMZI_LOG_LEVEL:-INFO}
 fullReconciliationIntervalMs: 120000
 operationTimeoutMs: 300000
-kubernetesServiceDnsDomain: https://kubernetes.default.svc
+kubernetesServiceDnsDomain: kubernetes.default.svc
 featureGates: ""
 tmpDirSizeLimit: 1Mi
 
