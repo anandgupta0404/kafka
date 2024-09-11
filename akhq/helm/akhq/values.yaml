@@ -1,0 +1,193 @@
+# imagePullSecrets:
+#  - name: my-repository-secret
+image:
+  repository: tchiotludo/akhq
+  tag: "" # uses Chart.AppVersion by default
+# Number of old deployment ReplicaSets to retain. The rest will be garbage collected.
+revisionHistoryLimit: 10
+# custom annotations (example: for prometheus)
+annotations: {}
+  #prometheus.io/scrape: 'true'
+  #prometheus.io/port: '8080'
+  #prometheus.io/path: '/prometheus'
+
+podAnnotations: {}
+
+configmapAnnotations: {}
+  # vault.security.banzaicloud.io/vault-role: akhq
+  # vault.security.banzaicloud.io/vault-serviceaccount: akhq
+
+# custom labels
+labels: {}
+  # custom.label: 'true'
+
+podLabels: {}
+
+## You can put directly your configuration here... or add java opts or any other env vars
+extraEnv: []
+# - name: AKHQ_CONFIGURATION
+#   value: |
+#       akhq:
+#         secrets:
+#           docker-kafka-server:
+#             properties:
+#               bootstrap.servers: "kafka:9092"
+# - name: JAVA_OPTS
+#   value: "-Djavax.net.ssl.trustStore=/opt/java/openjdk/lib/security/cacerts -Djavax.net.ssl.trustStorePassword=password"
+# - name: CLASSPATH
+#   value: "/any/additional/jars/desired.jar:/go/here.jar"
+
+## Or you can also use configmap for the configuration...
+configuration:
+  akhq:
+    server:
+      access-log:
+        enabled: false
+        name: org.akhq.log.access
+
+##... and secret for connection information
+existingSecrets: ""
+# name of the existingSecret
+secrets: {}
+#  akhq:
+#    connections:
+#      my-cluster-plain-text:
+#        properties:
+#          bootstrap.servers: "kafka:9092"
+#        schema-registry:
+#          url: "http://schema-registry:8085"
+#          type: "confluent"
+#          basic-auth-username: basic-auth-user
+#          basic-auth-password: basic-auth-pass
+#        connect:
+#          - name: "my-connect"
+#            url: "http://connect:8083"
+#            basic-auth-username: basic-auth-user
+#            basic-auth-password: basic-auth-pass
+
+#Provide extra base64 encoded kubernetes secrets (keystore/truststore)
+kafkaSecrets: {}
+#  truststore.jks: MIIIE...
+#  keystore.jks: MIIIE...
+
+# Any extra volumes to define for the pod (like keystore/truststore)
+extraVolumes: []
+#   - name: certstore-secret
+#     secret:
+#       secretName: akhq-secrets
+#       items:
+#         - key: "truststore.jks"
+#           path: "truststore.jks"
+#         - key: "keystore.jks"
+#           path: "keystore.jks"
+
+# Any extra volume mounts to define for the akhq container
+extraVolumeMounts: []
+#   - name: certstore-secret
+#     mountPath: "/secrets"
+#     readOnly: true
+
+# Specify ServiceAccount for pod
+serviceAccountName: null
+serviceAccount:
+  create: false
+  #annotations:
+  #  eks.amazonaws.com/role-arn: arn:aws:iam::123456789000:role/iam-role-name-here
+
+# Add your own init container or uncomment and modify the example.
+initContainers: {}
+#   create-keystore:
+#     image: "eclipse-temurin:11-jre"
+#     command: ['sh', '-c', 'keytool']
+#     volumeMounts:
+#      - mountPath: /tmp
+#        name: certs
+
+# Configure the Pod Security Context
+# ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
+securityContext: {}
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+# Configure the Container Security Context
+# ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
+containerSecurityContext: {}
+  # allowPrivilegeEscalation: false
+  # privileged: false
+  # capabilities:
+  #   drop:
+  #     - ALL
+  # runAsNonRoot: true
+  # runAsUser: 1001
+  # readOnlyRootFilesystem: true
+
+service:
+  enabled: true
+  type: ClusterIP
+  port: 80
+  managementPort: 28081
+  #httpNodePort: 32551
+  #managementNodePort: 32552
+  labels: {}
+  loadBalancerIP: ""
+  annotations:
+    # cloud.google.com/load-balancer-type: "Internal"
+
+ingress:
+  enabled: false
+  ingressClassName: ""
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  paths:
+    - /
+  pathType: "ImplementationSpecific"
+  hosts:
+    - akhq.demo.com
+  tls: []
+  #  - secretName: akhq-tls
+  #    hosts:
+  #      - akhq.demo.com
+
+### Readiness / Liveness probe config.
+### ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/
+readinessProbe:
+  enabled: true
+  prefix: "" # set same as `micronaut.server.context-path`
+  path: /health
+  port: management
+  initialDelaySeconds: 5
+  periodSeconds: 10
+  timeoutSeconds: 5
+  successThreshold: 1
+  failureThreshold: 3
+  httpGetExtra: {}
+
+livenessProbe:
+  enabled: true
+  prefix: "" # set same as `micronaut.server.context-path`
+  path: /health
+  port: management
+  initialDelaySeconds: 5
+  periodSeconds: 10
+  timeoutSeconds: 5
+  successThreshold: 1
+  failureThreshold: 3
+  httpGetExtra: {}
+
+resources: {}
+  # limits:
+  #  cpu: 100m
+  #  memory: 128Mi
+  # requests:
+  #  cpu: 100m
+  #  memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+networkPolicy:
+  enabled: true
