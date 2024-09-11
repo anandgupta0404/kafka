@@ -46,7 +46,7 @@ configuration:
           bootstrap.servers: "my-cluster-kafka-bootstrap:9093"
     server:
       access-log:
-        enabled: false
+        enabled: true
         name: org.akhq.log.access
 
 ##... and secret for connection information
