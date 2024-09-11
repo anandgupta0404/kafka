@@ -43,7 +43,7 @@ configuration:
     connections:
      my-cluster:
         properties:
-          bootstrap.servers: "my-cluster-kafka-bootstrap.kafka.svc:9093"
+          bootstrap.servers: "my-cluster-kafka-bootstrap.kafka.svc:9092"
 
     server:
       access-log:
