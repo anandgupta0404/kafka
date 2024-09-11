@@ -40,10 +40,11 @@ extraEnv: []
 ## Or you can also use configmap for the configuration...
 configuration:
   akhq:
-    connection:
-      my-cluster:
+    connections:
+     my-cluster:
         properties:
           bootstrap.servers: "my-cluster-kafka-bootstrap:9093"
+
     server:
       access-log:
         enabled: true
@@ -127,7 +128,7 @@ containerSecurityContext: {}
 
 service:
   enabled: true
-  type: ClusterIP
+  type: NodePort
   port: 80
   managementPort: 28081
   #httpNodePort: 32551
