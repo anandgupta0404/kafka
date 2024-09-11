@@ -40,6 +40,10 @@ extraEnv: []
 ## Or you can also use configmap for the configuration...
 configuration:
   akhq:
+    connection:
+      my-cluster:
+        properties:
+          bootstrap.servers: "my-cluster-kafka-bootstrap:9093"
     server:
       access-log:
         enabled: false
