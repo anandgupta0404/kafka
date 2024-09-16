@@ -43,7 +43,10 @@ configuration:
     connections:
      my-cluster:
         properties:
-          bootstrap.servers: "my-cluster-kafka-bootstrap.kafka.svc:9092"
+          bootstrap.servers: "my-cluster-kafka-bootstrap.kafka.svc:9093"
+          security.protocol: SSL
+          ssl.truststore.location: /app/secrets/truststore.jks
+          ssl.truststore.password: 1234567890
 
     server:
       access-log:
@@ -76,10 +79,10 @@ kafkaSecrets: {}
 #  keystore.jks: MIIIE...
 
 # Any extra volumes to define for the pod (like keystore/truststore)
-extraVolumes: []
-#   - name: certstore-secret
-#     secret:
-#       secretName: akhq-secrets
+extraVolumes: 
+   - name: truststore-secret
+     secret:
+       secretName: truststore-secret
 #       items:
 #         - key: "truststore.jks"
 #           path: "truststore.jks"
@@ -87,15 +90,16 @@ extraVolumes: []
 #           path: "keystore.jks"
 
 # Any extra volume mounts to define for the akhq container
-extraVolumeMounts: []
-#   - name: certstore-secret
-#     mountPath: "/secrets"
-#     readOnly: true
+extraVolumeMounts:
+   - name: truststore-secret
+     mountPath: "/app/secrets/truststore.jks"
+     #readOnly: true
+     subPath: truststore.jks
 
 # Specify ServiceAccount for pod
-serviceAccountName: null
+serviceAccountName: kafka-akhq
 serviceAccount:
-  create: false
+  create: true
   #annotations:
   #  eks.amazonaws.com/role-arn: arn:aws:iam::123456789000:role/iam-role-name-here
 
