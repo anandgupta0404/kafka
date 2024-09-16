@@ -56,3 +56,18 @@ spec:
       class: fast
       size: 2Gi
       type: ephemeral
+
+user:
+ enabled: true
+ name: test-user
+ authentication:
+  type: tls
+ authorization:
+  type: simple
+  acls:
+    - host: "*"
+      operation:
+         - All
+      resources:
+        type: topic
+        name: "*"
