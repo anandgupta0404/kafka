@@ -12,6 +12,6 @@ spec:
     acls:
       - resources:
           type: cluster
-          name: '*'
+          name: 'my-cluster'
         operations: 
          - All
