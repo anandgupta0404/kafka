@@ -4,6 +4,7 @@ metadata:
   name: my-cluster
   namespace: kafka
 spec:
+  entityOperator:
   kafka:
     config:
       auto.create.topics.enable: false
