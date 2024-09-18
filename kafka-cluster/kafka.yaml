@@ -8,6 +8,8 @@ spec:
     topicOperator: {}
     userOperator: {}
   kafka:
+    authorization:
+      type: simple
     config:
       auto.create.topics.enable: false
       log.message.format.version: "2.3"
