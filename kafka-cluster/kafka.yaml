@@ -5,6 +5,8 @@ metadata:
   namespace: kafka
 spec:
   entityOperator:
+    topicOperator: {}
+    userOperator: {}
   kafka:
     config:
       auto.create.topics.enable: false
