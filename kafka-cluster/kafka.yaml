@@ -27,6 +27,8 @@ spec:
         port: 9093
         type: internal
         tls: true
+        authentication:
+          type: tls
     livenessProbe:
       initialDelaySeconds: 15
       timeoutSeconds: 5
@@ -60,18 +62,3 @@ spec:
       class: fast
       size: 2Gi
       type: ephemeral
-
-  user:
-    enabled: true
-    name: test-user
-    authentication:
-      type: tls
-    authorization:
-      type: simple
-      acls:
-          - host: "*"
-            operation:
-               - All
-            resources:
-              type: topic
-              name: "*"
