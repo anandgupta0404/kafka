@@ -13,5 +13,6 @@ spec:
       - resources:
           type: cluster
           name: 'my-cluster'
+          patternType: literal
         operations: 
          - All
