@@ -10,7 +10,7 @@ spec:
   authorization:
     type: simple
     acls:
-      - resources:
+      - resource:
           type: cluster
           name: 'my-cluster'
           patternType: literal
