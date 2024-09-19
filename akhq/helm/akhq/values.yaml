@@ -47,6 +47,9 @@ configuration:
           security.protocol: SSL
           ssl.truststore.location: /app/secrets/truststore.jks
           ssl.truststore.password: 1234567890
+          ssl.keystore.type: "PKCS12"
+          ssl.keystore.location: /app/secrets/keystore.p12
+          ssl.keystore.password: 
 
     server:
       access-log:
@@ -83,6 +86,9 @@ extraVolumes:
    - name: truststore-secret
      secret:
        secretName: truststore-secret
+    - name: keystore-secret
+     secret:
+       secretName: keystore-secret
 #       items:
 #         - key: "truststore.jks"
 #           path: "truststore.jks"
@@ -95,6 +101,10 @@ extraVolumeMounts:
      mountPath: "/app/secrets/truststore.jks"
      #readOnly: true
      subPath: truststore.jks
+   - name: keystore-secret
+     mountPath: "/app/secrets/keystore.p12"
+     #readOnly: true
+     subPath: keystore.p12
 
 # Specify ServiceAccount for pod
 serviceAccountName: kafka-akhq
