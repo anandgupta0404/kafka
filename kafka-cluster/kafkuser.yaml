@@ -10,21 +10,21 @@ spec:
   authorization:
     type: simple
     acls:
-      - resources:
+      - resource:
           type: cluster
           name: '*'
           patternType: literal
         operations:
           - All
         host: '*'
-      - resources:
+      - resource:
           type: topic
           name: '*'
           patternType: literal
         operations:
           - All
         host: '*'
-      - resources:
+      - resource:
           type: group
           name: '*'
           patternType: literal
