@@ -12,16 +12,17 @@ spec:
     acls:
       - resources:
           type: cluster
-          name: "*"
+          name: '*'
         operations:
           - All
       - resources:
           type: topic
-          name: "*"
+          name: '*'
         operations:
           - All
       - resources:
           type: group
-          name: "*"
+          name: '*'
         operations:
           - All
+        host: '*'
