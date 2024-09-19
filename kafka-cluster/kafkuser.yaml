@@ -13,16 +13,19 @@ spec:
       - resources:
           type: cluster
           name: '*'
+          patternType: literal
         operations:
           - All
       - resources:
           type: topic
           name: '*'
+          patternType: literal
         operations:
           - All
       - resources:
           type: group
           name: '*'
+          patternType: literal
         operations:
           - All
         host: '*'
