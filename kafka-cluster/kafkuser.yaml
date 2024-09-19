@@ -10,9 +10,15 @@ spec:
   authorization:
     type: simple
     acls:
-      - resource:
+      - resources:
           type: cluster
-          name: 'my-cluster'
-          patternType: literal
-        operations: 
-         - All
+        operations:
+          -All
+      - resources:
+          type: topic
+        operations:
+          -All
+      - resources:
+          type: group
+        operations:
+          -All
