@@ -13,12 +13,12 @@ spec:
       - resources:
           type: cluster
         operations:
-          -All
+          - All
       - resources:
           type: topic
         operations:
-          -All
+          - All
       - resources:
           type: group
         operations:
-          -All
+          - All
