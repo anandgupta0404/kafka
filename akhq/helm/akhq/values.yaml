@@ -86,9 +86,14 @@ extraVolumes:
    - name: truststore-secret
      secret:
        secretName: truststore-secret
-   - name: keystore-secret
-     secret:
-       secretName: keystore-secret
+
+    - name: keystore-secret-external
+      secret:
+       secretName: keystore-secret-external
+
+## - name: keystore-secret
+##   secret:
+##     secretName: keystore-secret
 #       items:
 #         - key: "truststore.jks"
 #           path: "truststore.jks"
@@ -101,10 +106,15 @@ extraVolumeMounts:
      mountPath: "/app/secrets/truststore.jks"
      #readOnly: true
      subPath: truststore.jks
-   - name: keystore-secret
+   - name: keystore-secret-external
      mountPath: "/app/secrets/keystore.p12"
      #readOnly: true
      subPath: keystore.p12
+    
+#  - name: keystore-secret
+#    mountPath: "/app/secrets/keystore.p12"
+#    #readOnly: true
+#    subPath: keystore.p12
 
 # Specify ServiceAccount for pod
 serviceAccountName: kafka-akhq
