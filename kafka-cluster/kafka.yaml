@@ -7,7 +7,7 @@ spec:
   entityOperator:
     topicOperator: {}
     userOperator: {}
-clinetCa:
+clientCa:
     generateCertificateAuthority: false
   kafka:
     authorization:
