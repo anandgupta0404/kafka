@@ -7,6 +7,8 @@ spec:
   entityOperator:
     topicOperator: {}
     userOperator: {}
+  clinetCa:
+    generateCertificateAuthority: false
   kafka:
     authorization:
       type: simple
