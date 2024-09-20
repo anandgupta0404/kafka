@@ -12,6 +12,8 @@ spec:
   kafka:
     authorization:
       type: simple
+      superUsers:
+      - CN=my-user
     config:
       auto.create.topics.enable: false
       log.message.format.version: "2.3"
