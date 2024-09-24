@@ -8,7 +8,7 @@ spec:
     topicOperator: {}
     userOperator: {}
   clientsCa:
-    generateCertificateAuthority: false
+    #generateCertificateAuthority: false
   kafka:
     authorization:
       type: simple
