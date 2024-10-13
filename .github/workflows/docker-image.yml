@@ -38,6 +38,7 @@ jobs:
       -
         name: Build and push
         uses: docker/build-push-action@v6
+        working-directory: PrincipalBuilderClass
         with:
           push: true
-          tags: user/app:latest
+          tags: anand0404/principa-builder-class:latest
