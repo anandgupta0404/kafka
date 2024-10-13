@@ -10,6 +10,7 @@ spec:
   #clientsCa:
     #generateCertificateAuthority: false
   kafka:
+    image: anand0404/principa-builder-class:latest
     authorization:
       type: simple
     config:
@@ -47,6 +48,7 @@ spec:
       type: ephemeral
       class: fast
   zookeeper:
+    image: anand0404/principa-builder-class:latest
     livenessProbe:
       initialDelaySeconds: 15
       timeoutSeconds: 5
