@@ -39,7 +39,7 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v6
         with:
-          context: .
+          context: PrincipalBuilderClass
           file: ./Dockerfile
           push: true
           tags: anand0404/principa-builder-class:latest
