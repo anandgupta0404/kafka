@@ -21,7 +21,9 @@ jobs:
         name: Packaging Jar
         id: packaging-jar
         shell: bash
-        run: mvn clean install
+        run: |
+          cd PrincipalBuilderClass
+          mvn clean install
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v3
