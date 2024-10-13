@@ -10,6 +10,8 @@ jobs:
       - 
         name: Check out Repository
         uses: actions/checkout@v3
+        with:
+         path: PrincipalBuilderClass
       - 
         name: Set up JDK
         uses: actions/setup-java@v1
@@ -19,7 +21,6 @@ jobs:
         name: Packaging Jar
         id: packaging-jar
         shell: bash
-        path: PrincipalBuilderClass/
         run: mvn clean install
       -
         name: Set up QEMU
