@@ -10,8 +10,6 @@ jobs:
       - 
         name: Check out Repository
         uses: actions/checkout@v3
-        with:
-         path: PrincipalBuilderClass
       - 
         name: Set up JDK
         uses: actions/setup-java@v1
@@ -20,9 +18,9 @@ jobs:
       -   
         name: Packaging Jar
         id: packaging-jar
+        working-directory: PrincipalBuilderClass
         shell: bash
         run: |
-          cd PrincipalBuilderClass
           mvn -f pom.xml clean install
           ls -lrt
       -
