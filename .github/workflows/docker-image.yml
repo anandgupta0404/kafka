@@ -11,7 +11,7 @@ jobs:
         name: Check out Repository
         uses: actions/checkout@v3
         with:
-        path: PrincipalBuilderClass
+         path: PrincipalBuilderClass
       - 
         name: Set up JDK
         uses: actions/setup-java@v1
@@ -23,7 +23,7 @@ jobs:
         shell: bash
         run: |
           cd PrincipalBuilderClass
-          mvn -e clean install
+          mvn -f ../PrincipalBuilderClass/pom.xml clean install
           ls -lrt
       -
         name: Set up QEMU
