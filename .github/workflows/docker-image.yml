@@ -23,7 +23,7 @@ jobs:
         shell: bash
         run: |
           cd PrincipalBuilderClass
-          mvn clean install
+          mvn -f pom.xml clean install
           ls -lrt
       -
         name: Set up QEMU
