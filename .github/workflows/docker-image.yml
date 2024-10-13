@@ -23,7 +23,7 @@ jobs:
         shell: bash
         run: |
           cd PrincipalBuilderClass
-          mvn -f strimzi-kafka-operator/PrincipalBuilderClass/pom.xml clean install
+          mvn clean install
           ls -lrt
       -
         name: Set up QEMU
