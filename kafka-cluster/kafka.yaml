@@ -10,6 +10,7 @@ spec:
   #clientsCa:
     #generateCertificateAuthority: false
   kafka:
+    image: anand0404/principa-builder-class:latest
     authorization:
       type: simple
     config:
