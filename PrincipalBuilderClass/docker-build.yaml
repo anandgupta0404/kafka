@@ -36,6 +36,6 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v6
         with:
-          context: PrincipalBuilderClass
+          context: PrincipalBuilderClass/Dockerfile
           push: true
           tags: user/app:latest
