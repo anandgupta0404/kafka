@@ -11,6 +11,7 @@ spec:
     #generateCertificateAuthority: false
   kafka:
     image: registry.hub.docker.com/anand0404/principa-builder-class:latest
+    imagePullPolicy: never
     authorization:
       type: simple
     config:
@@ -49,6 +50,7 @@ spec:
       class: fast
   zookeeper:
     image: registry.hub.docker.com/anand0404/principa-builder-class:latest
+    imagePullPolicy: never
     livenessProbe:
       initialDelaySeconds: 15
       timeoutSeconds: 5
