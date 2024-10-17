@@ -12,6 +12,7 @@ spec:
   kafka:
     image: registry.hub.docker.com/anand0404/principa-builder-class:latest
     imagePullPolicy: never
+    version: 3.6.0
     authorization:
       type: simple
     config:
