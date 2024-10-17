@@ -14,7 +14,7 @@ spec:
     imagePullPolicy: never
     authorization:
       type: simple
-    version: "3.6.0"
+    version: "3.8.0"
     config:
       principal.builder.class: cz.scholz.customprincipalbuilder.CustomPrincipalBuilder
       inter.broker.protocol.version: '3.6'
