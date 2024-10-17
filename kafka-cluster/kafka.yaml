@@ -14,8 +14,11 @@ spec:
     imagePullPolicy: never
     authorization:
       type: simple
+    version: "3.6.0"
     config:
       principal.builder.class: cz.scholz.customprincipalbuilder.CustomPrincipalBuilder
+      inter.broker.protocol.version: '3.6'
+      inter.broker.listner.name: internal
       auto.create.topics.enable: false
       log.message.format.version: "2.3"
       log.retention.bytes: 1073741824
