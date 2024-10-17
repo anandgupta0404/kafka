@@ -15,6 +15,7 @@ spec:
     authorization:
       type: simple
     config:
+      principal.builder.class: cz.scholz.customprincipalbuilder.CustomPrincipalBuilder
       auto.create.topics.enable: false
       log.message.format.version: "2.3"
       log.retention.bytes: 1073741824
