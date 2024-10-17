@@ -10,7 +10,7 @@ spec:
   #clientsCa:
     #generateCertificateAuthority: false
   kafka:
-    image: registry.hub.docker.com/anand0404/principa-builder-class:latest
+    image: docker.io/anand0404/principa-builder-class:latest
     imagePullPolicy: never
     authorization:
       type: simple
