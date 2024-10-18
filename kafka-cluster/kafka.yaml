@@ -56,11 +56,15 @@ spec:
     #image: docker.io/anand0404/principa-builder-class:latest
     #imagePullPolicy: never
     livenessProbe:
-      initialDelaySeconds: 15
-      timeoutSeconds: 5
+      failureThreshold: 3
+      initialDelaySeconds: 30
+      periodSeconds: 30
+      timeoutSeconds: 10
     readinessProbe:
-      initialDelaySeconds: 15
-      timeoutSeconds: 5
+      failureThreshold: 3
+      initialDelaySeconds: 30
+      periodSeconds: 30
+      timeoutSeconds: 10
     replicas: 1
     jvmOptions:
       javaSystemProperties:
