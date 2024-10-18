@@ -45,7 +45,7 @@ spec:
     readinessProbe:
       initialDelaySeconds: 15
       timeoutSeconds: 5
-    replicas: 3
+    replicas: 1
     resources: {}
     storage:
       deleteClaim: false
@@ -61,7 +61,7 @@ spec:
     readinessProbe:
       initialDelaySeconds: 15
       timeoutSeconds: 5
-    replicas: 3
+    replicas: 1
     jvmOptions:
       javaSystemProperties:
         - name: zookeeper.ssl.hostnameVerification
