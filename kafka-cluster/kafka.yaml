@@ -46,7 +46,13 @@ spec:
       initialDelaySeconds: 15
       timeoutSeconds: 5
     replicas: 3
-    resources: {}
+    resources:
+     limits:
+        memory: 800Mi
+        cpu: 1000m
+     requests:
+        memory: 800Mi
+        cpu: 1000m
     storage:
       deleteClaim: false
       size: 2Gi
@@ -72,7 +78,13 @@ spec:
           value: "false"
         - name: zookeeper.ssl.quorum.hostnameVerification
           value: "false"
-    resources: {}
+    resources:
+      limits:
+         memory: 800Mi
+         cpu: 1000m
+      requests:
+         memory: 800Mi
+         cpu: 1000m
     storage:
       deleteClaim: false
       class: fast
