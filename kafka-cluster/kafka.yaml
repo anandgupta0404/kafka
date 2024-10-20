@@ -49,10 +49,10 @@ spec:
     resources:
      limits:
         memory: 800Mi
-        cpu: 600m
+        cpu: 300m
      requests:
         memory: 800Mi
-        cpu: 600m
+        cpu: 300m
     storage:
       deleteClaim: false
       size: 2Gi
@@ -81,10 +81,10 @@ spec:
     resources:
       limits:
          memory: 800Mi
-         cpu: 600m
+         cpu: 300m
       requests:
          memory: 800Mi
-         cpu: 600m
+         cpu: 300m
     storage:
       deleteClaim: false
       class: fast
