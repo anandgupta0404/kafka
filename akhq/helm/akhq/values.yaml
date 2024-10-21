@@ -87,9 +87,9 @@ extraVolumes:
      secret:
        secretName: truststore-secret
 
-   - name: keystore-secret-external
+   - name: keystore-secret
      secret:
-       secretName: keystore-secret-external
+       secretName: keystore-secret
 
 ## - name: keystore-secret
 ##   secret:
