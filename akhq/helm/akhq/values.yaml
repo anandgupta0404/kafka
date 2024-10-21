@@ -106,7 +106,7 @@ extraVolumeMounts:
      mountPath: "/app/secrets/truststore.jks"
      #readOnly: true
      subPath: truststore.jks
-   - name: keystore-secret-external
+   - name: keystore-secret
      mountPath: "/app/secrets/keystore.p12"
      #readOnly: true
      subPath: keystore.p12
