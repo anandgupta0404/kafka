@@ -40,11 +40,15 @@ spec:
         authentication:
           type: tls
     livenessProbe:
-      initialDelaySeconds: 15
-      timeoutSeconds: 5
+      failureThreshold: 3
+      initialDelaySeconds: 30
+      periodSeconds: 30
+      timeoutSeconds: 10
     readinessProbe:
-      initialDelaySeconds: 15
-      timeoutSeconds: 5
+      failureThreshold: 3
+      initialDelaySeconds: 30
+      periodSeconds: 30
+      timeoutSeconds: 10
     replicas: 2
     resources:
      limits:
