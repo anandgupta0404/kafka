@@ -18,7 +18,7 @@ jobs:
       -   
         name: Packaging Jar
         id: packaging-jar
-        working-directory: PrincipalBuilderClass
+        working-directory: PrincipalBuilderClassNew
         shell: bash
         run: |
           mvn -f pom.xml clean install
@@ -40,7 +40,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           platforms: linux/amd64,linux/arm64
-          context: PrincipalBuilderClass/
-          file: ./PrincipalBuilderClass/Dockerfile
+          context: PrincipalBuilderClassNew/
+          file: ./PrincipalBuilderClassNew/Dockerfile
           push: true
           tags: anand0404/principa-builder-class:latest
