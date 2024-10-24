@@ -45,7 +45,7 @@ configuration:
         properties:
           bootstrap.servers: "my-cluster-kafka-bootstrap.kafka.svc:9093"
           security.protocol: SSL
-          ssl.truststore.location: /app/secrets/truststore.jks
+          ssl.truststore.location: /app/secrets/truststore.p12
           ssl.truststore.password: 1234567890
           ssl.keystore.type: "PKCS12"
           ssl.keystore.location: /app/secrets/keystore.p12
@@ -103,9 +103,9 @@ extraVolumes:
 # Any extra volume mounts to define for the akhq container
 extraVolumeMounts:
    - name: inbuild-truststore-secret
-     mountPath: "/app/secrets/truststore.jks"
+     mountPath: "/app/secrets/truststore.p12"
      #readOnly: true
-     subPath: truststore.jks
+     subPath: truststore.p12
    - name: inbuild-keystore-secret
      mountPath: "/app/secrets/keystore.p12"
      #readOnly: true
