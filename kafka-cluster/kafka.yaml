@@ -16,7 +16,7 @@ spec:
       type: simple
     version: "3.8.0"
     config:
-      principal.builder.class: de.thmshmm.kafka.CustomPrincipalBuilder
+      principal.builder.class: cz.scholz.customprincipalbuilder.CustomPrincipalBuilder
       inter.broker.protocol.version: '3.6'
       inter.broker.listner.name: internal
       auto.create.topics.enable: false
