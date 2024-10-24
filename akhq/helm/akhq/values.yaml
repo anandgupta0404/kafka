@@ -83,13 +83,13 @@ kafkaSecrets: {}
 
 # Any extra volumes to define for the pod (like keystore/truststore)
 extraVolumes: 
-   - name: truststore-secret
+   - name: inbuild-truststore-secret
      secret:
-       secretName: truststore-secret
+       secretName: inbuild-truststore-secret
 
-   - name: keystore-secret
+   - name: inbuild-keystore-secret
      secret:
-       secretName: keystore-secret
+       secretName: inbuild-keystore-secret
 
 ## - name: keystore-secret
 ##   secret:
@@ -102,11 +102,11 @@ extraVolumes:
 
 # Any extra volume mounts to define for the akhq container
 extraVolumeMounts:
-   - name: truststore-secret
+   - name: inbuild-truststore-secret
      mountPath: "/app/secrets/truststore.jks"
      #readOnly: true
      subPath: truststore.jks
-   - name: keystore-secret
+   - name: inbuild-keystore-secret
      mountPath: "/app/secrets/keystore.p12"
      #readOnly: true
      subPath: keystore.p12

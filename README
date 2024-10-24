@@ -3,5 +3,5 @@
 kubectl  -n akhq exec -it --stdin --tty akhq-ui-7b6df65f54-crc24 -- bash -c "openssl s_client -connect my-cluster-kafka-bootstrap.kafka.svc:9093 2>/dev/null </dev/null |  sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p'"
 
 "create secret from p12 file"
-kubectl create secret generic truststore-secret --from-file=./keystore.p12 -n akhq
-kubectl create secret generic keystore-secret --from-file=./keystore.p12 -n akhq
+kubectl create secret generic inbuild-truststore-secret --from-file=./truststore.p12-n akhq
+kubectl create secret generic inbuild-keystore-secret --from-file=./keystore.p12 -n akhq
