@@ -49,7 +49,7 @@ configuration:
           ssl.truststore.password: 1234567890
           ssl.keystore.type: "PKCS12"
           ssl.keystore.location: /app/secrets/keystore.p12
-          ssl.keystore.password: JJP1nf0bo5vQY0imc9z5oAXqO4j8ktyg
+          ssl.keystore.password: 1234567890
 
     server:
       access-log:
