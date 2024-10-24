@@ -7,8 +7,8 @@ spec:
   entityOperator:
     topicOperator: {}
     userOperator: {}
-  #clientsCa:
-    #generateCertificateAuthority: false
+  clientsCa:
+    generateCertificateAuthority: false
   kafka:
     image: docker.io/anand0404/principa-builder-class:latest
     imagePullPolicy: never
