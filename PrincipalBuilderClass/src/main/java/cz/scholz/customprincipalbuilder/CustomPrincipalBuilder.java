@@ -31,7 +31,7 @@ public class CustomPrincipalBuilder implements KafkaPrincipalBuilder, KafkaPrinc
     // Customize the mapping rule to match you you want to do. This example matches the regular Strimzi users and givens
     // them the user principal <Username>@my-cluster. But you can customize it to for example remove some parts of the
     // distinguished name etc.
-    private static final String CUSTOM_SSL_PRINCIPAL_MAPPING_RULES = "RULE:^C=IN, ST=MH, O=MY ORG, CN=([a-zA-Z0-9.-]+)$/$1/";
+    private static final String CUSTOM_SSL_PRINCIPAL_MAPPING_RULES = "RULE:^C=IN, ST=MH, O=MY ORG, CN=([a-zA-Z0-9.-]+)$/$4/";
 
     private final DefaultKafkaPrincipalBuilder internalPrincipalBuilder;
     private final DefaultKafkaPrincipalBuilder userDefinedPrincipalBuilder;
