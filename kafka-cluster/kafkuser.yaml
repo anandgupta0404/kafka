@@ -17,17 +17,17 @@ spec:
         operations:
           - All
         host: '*'
-      - resource:
-          type: topic
-          name: '*'
-          patternType: literal
-        operations:
-          - All
-        host: '*'
-      - resource:
-          type: group
-          name: '*'
-          patternType: literal
-        operations:
-          - All
-        host: '*'
+      #- resource:
+       #   type: topic
+       #   name: '*'
+       #   patternType: literal
+       # operations:
+       #   - All
+       # host: '*'
+      #- resource:
+      #    type: group
+      #    name: '*'
+      #    patternType: literal
+      #  operations:
+      #    - All
+      #  host: '*'
