@@ -14,6 +14,8 @@ spec:
     imagePullPolicy: never
     authorization:
       type: simple
+      superUsers:
+        - my-client
     version: "3.8.0"
     config:
       principal.builder.class: cz.scholz.customprincipalbuilder.CustomPrincipalBuilder
