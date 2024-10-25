@@ -9,12 +9,12 @@ spec:
     type: tls-external
   authorization:
     type: simple
-    acls:
-      - resource:
-          type: cluster
-        operations:
-          - All
-        host: '*'
+    #acls:
+     # - resource:
+      #    type: cluster
+       # operations:
+        #  - All
+        #host: '*'
       - resource:
           type: topic
           name: '*'
