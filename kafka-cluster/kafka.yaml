@@ -10,13 +10,13 @@ spec:
   clientsCa:
     generateCertificateAuthority: false
   kafka:
-    #image: docker.io/anand0404/principa-builder-class:latest
+    image: docker.io/anand0404/principa-builder-class:latest
     imagePullPolicy: never
     authorization:
       type: simple
     version: "3.8.0"
     config:
-      #principal.builder.class: cz.scholz.customprincipalbuilder.CustomPrincipalBuilder
+      principal.builder.class: cz.scholz.customprincipalbuilder.CustomPrincipalBuilder
       inter.broker.protocol.version: '3.6'
       inter.broker.listner.name: internal
       auto.create.topics.enable: false
