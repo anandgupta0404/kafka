@@ -18,14 +18,14 @@ spec:
       - resource:
           type: topic
           name: '*'
-          patternType: literal
+          patternType: prefix
         operations:
           - All
         host: '*'
       - resource:
           type: group
           name: '*'
-          patternType: literal
+          patternType: prefix
         operations:
           - All
         host: '*'
