@@ -1,0 +1,31 @@
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaUser
+metadata:
+  name: my-client
+  labels:
+    strimzi.io/cluster: my-cluster
+spec:
+  authentication:
+    type: tls-external
+  authorization:
+    type: simple
+    acls:
+     # - resource:
+      #    type: cluster
+       # operations:
+        #  - All
+        #host: '*'
+      - resource:
+          type: topic
+          name: '*'
+          patternType: prefix
+        operations:
+          - All
+        host: '*'
+      - resource:
+          type: group
+          name: '*'
+          patternType: prefix
+        operations:
+          - All
+        host: '*'
