@@ -9,7 +9,7 @@ spec:
     type: tls-external
   authorization:
     type: simple
-    #acls:
+    acls:
      # - resource:
       #    type: cluster
        # operations:
