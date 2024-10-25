@@ -96,3 +96,7 @@ spec:
       class: fast
       size: 2Gi
       type: ephemeral
+  logging:
+    loggers:
+      connect.root.logger.level: DEBUG
+    type: inline
