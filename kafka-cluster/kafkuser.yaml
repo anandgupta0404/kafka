@@ -12,8 +12,6 @@ spec:
     acls:
       - resource:
           type: cluster
-          name: '*'
-          patternType: literal
         operations:
           - All
         host: '*'
