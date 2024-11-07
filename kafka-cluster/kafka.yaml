@@ -65,7 +65,7 @@ spec:
       type: ephemeral
       class: fast
   zookeeper:
-    #image: docker.io/anand0404/principa-builder-class:latest
+    image: docker.io/anand0404/principa-builder-class:latest
     #imagePullPolicy: never
     livenessProbe:
       failureThreshold: 3
