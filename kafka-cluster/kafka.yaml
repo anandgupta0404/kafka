@@ -14,7 +14,7 @@ spec:
     imagePullPolicy: never
     authorization:
       type: simple
-       superUsers:
+      superUsers:
           - my-client
     version: "3.8.0"
     config:
