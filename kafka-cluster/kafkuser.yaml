@@ -10,11 +10,11 @@ spec:
   authorization:
     type: simple
     acls:
-     # - resource:
-      #    type: cluster
-       # operations:
-        #  - All
-        #host: '*'
+      - resource:
+          type: cluster
+        operations:
+          - All
+        host: '*'
       - resource:
           type: topic
           name: '*'
