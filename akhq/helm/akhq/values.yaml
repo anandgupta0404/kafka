@@ -152,7 +152,7 @@ containerSecurityContext: {}
 
 service:
   enabled: true
-  type: ClusterIP
+  type: NodePort
   port: 80
   managementPort: 28081
   #httpNodePort: 32551
