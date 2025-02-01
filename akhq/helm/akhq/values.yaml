@@ -87,9 +87,9 @@ extraVolumes:
      secret:
        secretName: inbuild-truststore-secret
 
-   - name: external-keystore-secret
+   - name: inbuild-keystore-secret
      secret:
-       secretName: external-keystore-secret
+       secretName: inbuild-keystore-secret
 
 ## - name: keystore-secret
 ##   secret:
@@ -106,7 +106,7 @@ extraVolumeMounts:
      mountPath: "/app/secrets/truststore.p12"
      #readOnly: true
      subPath: truststore.p12
-   - name: external-keystore-secret
+   - name: inbuild-keystore-secret
      mountPath: "/app/secrets/keystore.p12"
      #readOnly: true
      subPath: keystore.p12
