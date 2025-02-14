@@ -46,10 +46,10 @@ configuration:
           bootstrap.servers: "my-cluster-kafka-bootstrap.kafka.svc:9093"
           security.protocol: SSL
           ssl.truststore.location: /app/secrets/truststore.p12
-          ssl.truststore.password: 1234567890
+          ssl.truststore.password: 123456789
           ssl.keystore.type: "PKCS12"
           ssl.keystore.location: /app/secrets/keystore.p12
-          ssl.keystore.password: 1234567890
+          ssl.keystore.password: 123456789
 
     server:
       access-log:
