@@ -5,3 +5,5 @@ kubectl  -n akhq exec -it --stdin --tty akhq-ui-7b6df65f54-crc24 -- bash -c "ope
 "create secret from p12 file"
 kubectl create secret generic inbuild-truststore-secret --from-file=./truststore.p12 -n akhq
 kubectl create secret generic inbuild-keystore-secret --from-file=./keystore.p12 -n akhq
+
+password: 1234567890
