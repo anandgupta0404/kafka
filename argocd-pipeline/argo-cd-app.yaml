@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: strimzi-kafka-operator
+spec:
+  destination:
+    name: ''
+    namespace: strimzi-operator
+    server: https://kubernetes.default.svc
+  source:
+    path: strimzi-operator
+    repoURL: https://github.com/anandgupta0404/kafka.git
+    targetRevision: main
+  sources: []
+  project: default
+  syncPolicy:
+    automated: null
