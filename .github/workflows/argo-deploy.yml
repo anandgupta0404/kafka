@@ -1,0 +1,18 @@
+name: argocd-deploy
+
+on:
+  push:
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - 
+        name: Check out Repository
+        uses: actions/checkout@v3
+      -
+        name: Run Script file
+        run : |
+          chmod +x ./deploy.sh
+        shell: bash
+    

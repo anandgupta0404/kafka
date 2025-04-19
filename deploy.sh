@@ -1,0 +1,1 @@
+kubectl apply -f argocd-pipeline/argo-cd-app.yaml
