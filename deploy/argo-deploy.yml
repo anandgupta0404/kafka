@@ -24,6 +24,7 @@ jobs:
 
       -
         name: Run Script file
+        working-directory: deploy
         run : |
   
           chmod +x deploy.sh
