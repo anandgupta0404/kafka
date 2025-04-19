@@ -17,6 +17,7 @@ jobs:
 
       - 
         name: pull kubeconfig
+        working-directory: deploy
         run: |
           mkdir ~/.kube/
           cp -p config ~/.kube/
