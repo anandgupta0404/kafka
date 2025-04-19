@@ -12,6 +12,8 @@ jobs:
       - 
         name: Check out Repository
         uses: actions/checkout@v4
+        with:
+          sparse-checkout: .
 
       - 
         name: pull kubeconfig
