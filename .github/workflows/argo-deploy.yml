@@ -2,6 +2,8 @@ name: argocd-deploy
 
 on:
   push:
+env:
+  CLUSTER_KUBECONFIG: ${{ secrets }}
 
 jobs:
   docker:
@@ -13,6 +15,8 @@ jobs:
       -
         name: Run Script file
         run : |
-          chmod +x ./deploy.sh
+          cp 
+          chmod +x deploy.sh
+          ./deploy.sh
         shell: bash
     
