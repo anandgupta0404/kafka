@@ -2,7 +2,11 @@ name: ci
 
 on:
   push:
-
+    branches:
+      - main
+    paths:
+      - strimzi-kafka-operator/PrincipalBuilderClass
+    
 jobs:
   docker:
     runs-on: ubuntu-latest

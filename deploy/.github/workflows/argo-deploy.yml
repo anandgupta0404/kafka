@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-       - deploy
+       - strimzi-kafka-operator/deploy
 env:
   KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
 
