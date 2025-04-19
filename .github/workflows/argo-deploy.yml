@@ -3,7 +3,7 @@ name: argocd-deploy
 on:
   push:
 env:
-  CLUSTER_KUBECONFIG: ${{ secrets }}
+  KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
 
 jobs:
   docker:
@@ -12,11 +12,19 @@ jobs:
       - 
         name: Check out Repository
         uses: actions/checkout@v3
+
+      - 
+        name: pull kubeconfig
+        run: |
+          mkdir ~/.kube/
+          cp -p config ~/.kube/
+          ls -lrt ~/.kube/config
+
       -
         name: Run Script file
         run : |
-          cp 
+  
           chmod +x deploy.sh
           ./deploy.sh
-        shell: bash
+        shell: bash 
     
