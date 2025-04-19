@@ -2,6 +2,10 @@ name: argocd-deploy
 
 on:
   push:
+    branches:
+      - main
+    paths:
+       - deploy
 env:
   KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
 
