@@ -10,7 +10,7 @@ metadata:
 spec:
   version: 3.8.0
   replicas: 1
-  bootstrapServers: my-cluster-kafka-bootstrap.kafka.svc:9092
+  bootstrapServers: my-cluster-kafka-bootstrap.kafka.svc:9093
   tls:
     trustedCertificates:
       - secretName: my-cluster-cluster-ca-cert
